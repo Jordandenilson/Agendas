@@ -57,3 +57,11 @@ if n == 1 :
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 if n == 2 :
 	print(Contactos)
+	
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+if n == 3 :
+	print(Contactos)
+	d = str(input("Qué contaco desea eliminar?"))
+	del Contactos[d]
+	print("Contacto eliminado")
+	
