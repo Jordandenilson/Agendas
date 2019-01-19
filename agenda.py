@@ -56,4 +56,4 @@ if n == 1 :
 		print("Contacto agregado!")
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 if n == 2 :
-	print("Esta es la opcion mostrar")
+	print(Contactos)
