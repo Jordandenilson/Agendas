@@ -64,4 +64,4 @@ if n == 3 :
 	d = str(input("Qué contaco desea eliminar?"))
 	del Contactos[d]
 	print("Contacto eliminado")
-	
+	print(Contactos)	
