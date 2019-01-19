@@ -1,6 +1,11 @@
 ##################################################
 ############## F U N C I O N E S #################
 
+def Opcion() :
+	n = int(input("Su opción es: "))
+	print("\n")
+	return n
+	
 def Opciones() :
 	print("\n1. Añardir contacto.")
 	print("2. Mostrar contacto")
@@ -29,39 +34,47 @@ Contactos = {"Presi":"986541237", "Pepito":"986751324", "Emma":"978563421"}
 print("Bienvenido a su agenda personal")
 print("Cómo me dirijo a usted?")
 
-N = input("Digite su nombre...")
+N = input("Digite su nombre... ")
 
-print(f"\nMuy bien {N} qué función quieres realizar?:")
+print(f"\nMuy bien {N} qué función quieres realizar?: ")
 
 Opciones()
 
-n = int(input("Su opción es: "))
+#n = int(input("Su opción es: "))
+n = Opcion()
 
 while 0>=n or n>=5 :
 	print("La opción escogida no existe")
-	n = int(input("Su opción es: "))
-	
+	n = Opcion()
+while 3>=n and n>=1 :
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::	
-if n == 1 :
-	x = Añadir()
-	v = Verificar_validacion(x)
-	while v == False :
-		print("El número ingresado es incorrecto")
+	if n == 1 :
 		x = Añadir()
 		v = Verificar_validacion(x)
-	if v == True :
-		print("El número es correcto")
-		l = str(input("Cómo quiere guardar el número? "))
-#		Contactos[l] = x 
-		print("Contacto agregado!")
+		while v == False :
+			print("El número ingresado es incorrecto")
+			x = Añadir()
+			v = Verificar_validacion(x)
+		if v == True :
+			print("El número es correcto")
+			l = str(input("Cómo quiere guardar el número? "))
+			Contactos[l] = x 
+			print("Contacto agregado!")
+		Opciones()
+		n = Opcion()
 #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-if n == 2 :
-	print(Contactos)
+	if n == 2 :
+		print(Contactos)
+		Opciones()
+		n = Opcion()
+#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	if n == 3 :
+		print(Contactos)
+		d = str(input("Qué contaco desea eliminar?"))
+		del Contactos[d]
+		print("Contacto eliminado")
+		Opciones()
+		n = Opcion()
 	
-#:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-if n == 3 :
-	print(Contactos)
-	d = str(input("Qué contaco desea eliminar?"))
-	del Contactos[d]
-	print("Contacto eliminado")
-	print(Contactos)	
+if n == 4 :
+	print("Gracias por usar BESTO_AGENDA, que tenga buen día n.n")
